@@ -78,8 +78,6 @@ class SelectHiddenAutocompleteType extends AbstractType
                     return $entityClass;
                 }
 
-                return 'ok';
-
                 if (!empty($options['autocomplete_alias'])) {
                     $searchHandler = $this->searchRegistry->getSearchHandler($options['autocomplete_alias']);
 

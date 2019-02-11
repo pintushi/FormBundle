@@ -10,6 +10,7 @@ use Pintushi\Bundle\SearchBundle\Engine\Indexer;
 use Pintushi\Bundle\SecurityBundle\ORM\Walker\AclHelper;
 use Symfony\Component\PropertyAccess\PropertyAccess;
 use Symfony\Component\PropertyAccess\PropertyAccessor;
+use Pintushi\Bundle\SearchBundle\Provider\SearchMappingProvider;
 
 class SearchHandler implements SearchHandlerInterface
 {
@@ -79,16 +80,17 @@ class SearchHandler implements SearchHandlerInterface
 
     /**
      * @param Indexer $indexer
-     * @param array   $config
+     * @param SearchMappingProvider   $searchMappingProvider
      * @throws \RuntimeException
      */
-    public function initSearchIndexer(Indexer $indexer, array $config)
+    public function initSearchIndexer(Indexer $indexer, SearchMappingProvider $searchMappingProvider)
     {
         $this->indexer = $indexer;
-        if (empty($config[$this->entityName]['alias'])) {
+        $entityConfig = $searchMappingProvider->getMappingConfig();
+        if (empty($entityConfig[$this->entityName]['alias'])) {
             throw new \RuntimeException(sprintf('Cannot init search alias for entity "%s".', $this->entityName));
         }
-        $this->entitySearchAlias = $config[$this->entityName]['alias'];
+        $this->entitySearchAlias = $entityConfig[$this->entityName]['alias'];
     }
 
     /**

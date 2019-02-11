@@ -90,7 +90,7 @@ class SelectType extends AbstractType
         $position = array_search($this->getBlockPrefix(), $blockPrefixes);
 
         if ($position) {
-            array_splice($blockPrefixes, $position, 0, 'oro_select2');
+            array_splice($blockPrefixes, $position, 0, 'pintushi_select2');
             $view->vars['block_prefixes'] = $blockPrefixes;
         }
     }
