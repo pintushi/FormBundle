@@ -1,0 +1,15 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
+
+
+    Pintushi\Bundle\FormBundle\Form\Type\SelectHiddenType: ~
+
+    Pintushi\Bundle\FormBundle\Form\Type\SelectChoiceType: ~
+
+    Pintushi\Bundle\FormBundle\Form\Type\SelectEntityType: ~
+
+    Pintushi\Bundle\FormBundle\Form\Type\SelectHiddenAutocompleteType: ~
+

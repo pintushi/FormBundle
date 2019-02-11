@@ -1,0 +1,22 @@
+{
+    "name": "pintushi/form-bundle",
+    "type": "symfony-bundle",
+    "description": "Pintushi Form Bundle",
+    "keywords": [
+        "Form"
+    ],
+    "license": "MIT",
+    "require": {
+        "php": "7.1.*",
+        "symfony/symfony": "^4.0"
+    },
+    "autoload": {
+        "psr-0": {"Pintushi\\Bundle\\FormBundle": ""}
+    },
+    "target-dir": "Pintushi/Bundle/FormBundle",
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    }
+}

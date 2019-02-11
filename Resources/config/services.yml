@@ -1,0 +1,20 @@
+imports:
+    - { resource: 'form_type.yml'}
+
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
+
+    Pintushi\Bundle\FormBundle\:
+        resource: '../../{Repository,Command,Validator}'
+
+    Pintushi\Bundle\FormBundle\Autocomplete\SearchRegistry: ~
+
+    Pintushi\Bundle\FormBundle\Autocomplete\Security: ~
+
+    Pintushi\Bundle\FormBundle\Form\Transformer\SelectHiddenAutocompleteTransfomer:
+        tags:
+            - { name: 'liform.transformer', form_type: 'Pintushi\Bundle\FormBundle\Form\Type\SelectHiddenAutocompleteType', widget: 'select'}
+
