@@ -216,7 +216,7 @@ class SelectHiddenAutocompleteType extends AbstractType
             }
 
             $vars['attr'] = [
-                'data-selected-data' => json_encode($result)
+                'data-selected-data' => $result
             ];
         }
 

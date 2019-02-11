@@ -20,6 +20,10 @@ class SelectHiddenAutocompleteTransfomer extends AbstractTransformer
             'type' => 'integer',
         ];
 
+        if (isset($formView->vars['attr']['data-selected-data'])) {
+            $schema['data-selected-data'] = $formView->vars['attr']['data-selected-data'];
+        }
+
         $schema = $this->addCommonSpecs($form, $schema, $extensions, $widget);
         $schema = $this->addWidgetConfig($form, $schema);
 
@@ -28,7 +32,7 @@ class SelectHiddenAutocompleteTransfomer extends AbstractTransformer
 
     protected function addWidgetConfig($form, $schema)
     {
-        $schema['widget_config'] = $form->getConfig()->getOption('configs');
+        $schema['widget_configs'] = $form->getConfig()->getOption('configs');
 
         return $schema;
     }
