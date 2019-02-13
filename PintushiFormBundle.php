@@ -8,7 +8,7 @@ use Pintushi\Bundle\FormBundle\DependencyInjection\Compiler\AutocompleteCompiler
 
 class PintushiFormBundle extends Bundle
 {
-      /**
+    /**
      * {@inheritdoc}
      */
     public function build(ContainerBuilder $container)
