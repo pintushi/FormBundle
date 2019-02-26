@@ -19,4 +19,4 @@ services:
         calls:
             - [initSearchIndexer, ["@pintushi_search.index", '@Pintushi\Bundle\SearchBundle\Provider\SearchMappingProvider']]
             - [initDoctrinePropertiesByManagerRegistry, ["@doctrine"]]
-            - [setAclHelper,["@pintushi.acl_helper"]]
+            - [setAclHelper,["@pintushi_security.acl_helper"]]
