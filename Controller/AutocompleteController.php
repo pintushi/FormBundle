@@ -42,7 +42,10 @@ class AutocompleteController extends AbstractController
      *
      * @Route(
      *     "autocomplete/search",
-     *     name="pintushi_form_autocomplete_search"
+     *     name="pintushi_form_autocomplete_search",
+     *     defaults={
+     *         "_enable_acl_condition_data_builder"=true
+     *     }
      * )
      * AclAncestor("pintushi_search")
      */

@@ -251,6 +251,9 @@ class SearchHandler implements SearchHandlerInterface
             /** @var QueryBuilder $queryBuilder */
             $queryBuilder = $this->entityRepository->createQueryBuilder('e');
             $queryBuilder->where($queryBuilder->expr()->in('e.' . $this->idFieldName, $entityIds));
+
+            $this->aclHelper->apply($queryBuilder);
+
             return $queryBuilder->getQuery()->getResult();
         }
 
